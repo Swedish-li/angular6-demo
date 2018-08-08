@@ -1,0 +1,16 @@
+<p>
+  <button class="btn btn-lg" [@btnState]="btnState" (click)="btnToggle()">
+    btn state
+  </button>
+</p>
+<p>
+  <button class="btn btn-lg btn-primary" [@btnInlineState]="btnState" (click)="btnToggle()">
+    btn inline state
+  </button>
+</p>
+<div>
+  <button class="btn btn-sm btn-danger"  (click)="toggle()">toggle Enter/Leave</button>
+  <p class="text-danger border-primary" *ngIf="show" [@flyInOut]="show">
+    Danger Text
+  </p>
+</div>
