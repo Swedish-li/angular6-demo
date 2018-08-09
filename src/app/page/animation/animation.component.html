@@ -1,5 +1,7 @@
 <p>
-  <button class="btn btn-lg" [@btnState]="btnState" (click)="btnToggle()">
+  <!-- Animation callbacks -->
+  <button class="btn btn-lg" *ngIf="show" (@btnState.start)="animationStart($event)" (@btnState.done)="animationDone($event)"
+    [@btnState]="btnState" (click)="btnToggle()">
     btn state
   </button>
 </p>
@@ -9,8 +11,18 @@
   </button>
 </p>
 <div>
-  <button class="btn btn-sm btn-danger"  (click)="toggle()">toggle Enter/Leave</button>
-  <p class="text-danger border-primary" *ngIf="show" [@flyInOut]="show">
+  <button class="btn btn-sm btn-danger" (click)="toggle()">toggle Enter/Leave</button>
+  <button class="btn btn-block btn-info col-sm-5 mt-2" *ngIf="show" [@flyInOut]="show">
     Danger Text
-  </p>
+  </button>
+</div>
+<div>
+  <button class="btn btn-secondary btn-block col-sm-6 mt-3" *ngIf="show" [@shrinkOut]="'in'">Shrink out</button>
+</div>
+<div class="wrapper">
+  <div class="tunnel"></div>
+  <div id="alice">
+    <!-- https://codepen.io/rachelnabors/pen/QyOqqW -->
+    <embed src="assets/alice.svg" type="image/svg+xml" />
+  </div>
 </div>
