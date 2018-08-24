@@ -2,6 +2,7 @@
 
 * [Animations](https://angular.io/guide/animations)
 * [ Web Animations API](https://drafts.csswg.org/web-animations/)
+* [Ant Design of Angular](http://ng.ant.design/docs/introduce/zh)
 
 项目创建
 
