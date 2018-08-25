@@ -1,25 +1,14 @@
 <nz-layout>
   <nz-header>Angular 6 Demo</nz-header>
   <nz-layout>
+
     <nz-sider>
-      <ul nz-menu [nzMode]="'inline'">
-        <li nz-submenu>
-          <span title><i class="anticon anticon-profile"></i>Web</span>
-          <ul>
-            <li nz-menu-group>
-              <span title>Animation</span>
-              <ul>
-                <li nz-menu-item>Angular</li>
-                <li nz-menu-item>CSS3</li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
+      <app-menu></app-menu>
     </nz-sider>
     <nz-content>
+
       <div class="container">
-        <app-animation></app-animation>
+        <router-outlet></router-outlet>
       </div>
     </nz-content>
   </nz-layout>
