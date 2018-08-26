@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { btnState, btnInlineState, flyInOut, shrinkOut } from '../../animate';
+import { btnState, btnInlineState, flyInOut, shrinkOut } from '../../../animate';
 
 @Component({
-  selector: 'app-animation',
-  templateUrl: './animation.component.html',
-  styleUrls: ['./animation.component.scss'],
+  selector: 'app-animation-ng',
+  templateUrl: './animation-ng.component.html',
+  styleUrls: ['./animation-ng.component.scss'],
   animations: [btnState, btnInlineState, flyInOut, shrinkOut]
 })
-export class AnimationComponent implements OnInit {
+export class AnimationNgComponent implements OnInit {
 
   btnState: string;
   show: boolean;
@@ -35,5 +35,4 @@ export class AnimationComponent implements OnInit {
   animationDone(event: AnimationEvent) {
     console.log(event);
   }
-
 }

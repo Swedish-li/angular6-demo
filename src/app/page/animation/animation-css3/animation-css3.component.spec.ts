@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AnimationComponent } from './animation.component';
+import { AnimationCss3Component } from './animation-css3.component';
 
-describe('AnimationComponent', () => {
-  let component: AnimationComponent;
-  let fixture: ComponentFixture<AnimationComponent>;
+describe('AnimationCss3Component', () => {
+  let component: AnimationCss3Component;
+  let fixture: ComponentFixture<AnimationCss3Component>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AnimationComponent ]
+      declarations: [ AnimationCss3Component ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AnimationComponent);
+    fixture = TestBed.createComponent(AnimationCss3Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

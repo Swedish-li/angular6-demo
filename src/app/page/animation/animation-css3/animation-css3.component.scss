@@ -1,0 +1,105 @@
+.border-primary {
+    border: 2px solid;
+}
+
+#alice {
+    animation: aliceTumbling infinite 3s linear;
+    color: #431236;
+    width: 25%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0 0;
+    transform: rotate(0) translate3D(-50%, -50%, 0);
+    backface-visibility: hidden;
+    will-change: transform, color;
+}
+
+path {
+    fill: currentColor;
+}
+
+@keyframes aliceTumbling {
+    0% {
+        color: #000;
+        transform: rotate(0) translate3D(-50%, -50%, 0);
+    }
+    30% {
+        color: #431236;
+    }
+    100% {
+        color: #000;
+        transform: rotate(360deg) translate3D(-50%, -50%, 0);
+    }
+}
+
+/* This stuff might be interesting. */
+
+.tunnel {
+    animation: tunnelFly 1s linear infinite;
+    background: url("/assets/bg-tunnel-border-left.svg") repeat-y, url("/assets/bg-tunnel-border-right.svg") repeat-y 100% 100%, url("/assets/bg_tunnel-specks.png"), #6c373f;
+    margin: 0 auto;
+    height: calc(100% + 300px);
+    width: 60%;
+    min-width: 400px;
+    backface-visibility: hidden;
+    will-change: transform;
+}
+
+@keyframes tunnelFly {
+    100% {
+        transform: translate3D(0, -300px, 0);
+    }
+}
+
+.wrapper {
+    position: relative;
+    border: red solid 10px;
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.img-wrapper {
+    border: blue dotted 5px;
+    width: 1090px;
+    height: 620px;
+    margin: 10px auto;
+    >img {
+        width: 50%;
+        height: 50%;
+        transition: 1s height, 1s 1s width cubic-bezier(.83, .97, .05, 1.44); // 指定过渡时间，延迟时间，对应属性
+    }
+    >img:hover {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.animation {
+    // background: linear-gradient( 45deg, #f10303, #0dc55a);
+    width: 200px;
+    height: 200px;
+    border: #000 solid 3px;
+    &:hover {
+        // animation: 1s rainbow infinite;
+        //  animation: 1s rainbow 3;
+        // 让动画保持在结束状态
+        animation: 1s rainbow forwards;
+    }
+}
+
+@keyframes rainbow {
+    from {
+        // 0%
+        background-color: #c00;
+    }
+    50% {
+        background-color: orange;
+    }
+    to {
+        // 100%
+        background-color: yellowgreen;
+    }
+}

@@ -1,0 +1,22 @@
+<p>
+  <!-- Animation callbacks -->
+  <button nz-button nzType="primary" *ngIf="show" (@btnState.start)="animationStart($event)" (@btnState.done)="animationDone($event)"
+    [@btnState]="btnState" (click)="btnToggle()">
+    btn state
+  </button>
+</p>
+<p>
+  <button nz-button nzType="default" [@btnInlineState]="btnState" (click)="btnToggle()">
+    btn inline state
+  </button>
+</p>
+<div>
+  <button nz-button nzType="danger" (click)="toggle()">toggle Enter/Leave</button>
+  <hr>
+  <button nz-button nzType="dashed" *ngIf="show" [@flyInOut]="show">
+    Danger Text
+  </button>
+</div>
+<div>
+  <button nz-button nzType="primary" nzSize="large" *ngIf="show" [@shrinkOut]="'in'">Shrink out</button>
+</div>
