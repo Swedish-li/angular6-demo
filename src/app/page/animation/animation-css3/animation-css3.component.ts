@@ -7,9 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnimationCss3Component implements OnInit {
 
-  btnState: string;
-  show: boolean;
-
   constructor() {
   }
 
