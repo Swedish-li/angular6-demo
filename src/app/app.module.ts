@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgZorroAntdModule, NZ_I18N, ja_JP } from 'ng-zorro-antd';
-import { registerLocaleData } from '@angular/common';
+import { registerLocaleData, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import ja from '@angular/common/locales/ja';
 import { MenuComponent } from './component/menu/menu.component';
 import { AppRoutingModule } from './router/app-routing.module';
@@ -30,7 +30,10 @@ registerLocaleData(ja);
     NgZorroAntdModule,
     AppRoutingModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: ja_JP }],
+  providers: [
+    { provide: NZ_I18N, useValue: ja_JP },
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
