@@ -1,8 +1,9 @@
 # Angular6 Demo
 
 * [Animations](https://angular.io/guide/animations)
-* [ Web Animations API](https://drafts.csswg.org/web-animations/)
+* [Web Animations API](https://drafts.csswg.org/web-animations/)
 * [Ant Design of Angular](http://ng.ant.design/docs/introduce/zh)
+* [Comments in Typescript(vscode)](https://marketplace.visualstudio.com/items?itemName=salbert.comment-ts)
 
 项目创建
 

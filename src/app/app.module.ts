@@ -15,6 +15,10 @@ import { AnimationCss3Component } from './page/animation/animation-css3/animatio
 
 registerLocaleData(ja);
 
+
+/**
+ * app core module
+ */
 @NgModule({
   declarations: [
     AppComponent,

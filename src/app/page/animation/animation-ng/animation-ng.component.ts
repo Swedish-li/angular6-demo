@@ -9,9 +9,22 @@ import { btnState, btnInlineState, flyInOut, shrinkOut } from '../../../animate'
 })
 export class AnimationNgComponent implements OnInit {
 
+
+  /**
+   * Btn state of animation AnimationNg component
+   */
   btnState: string;
+
+
+  /**
+   * show of animation AnimationNg component
+   */
   show: boolean;
 
+
+  /**
+   * Creates an instance of AnimationNg component.
+   */
   constructor() {
     this.btnState = 'inactive';
     this.show = true;
@@ -28,10 +41,20 @@ export class AnimationNgComponent implements OnInit {
     this.show = !this.show;
   }
 
+
+  /**
+   * Animations start
+   * @param event Animation start event
+   */
   animationStart(event: AnimationEvent) {
     console.log(event);
   }
 
+
+  /**
+   * Animations done
+   * @param event Animation done event
+   */
   animationDone(event: AnimationEvent) {
     console.log(event);
   }
