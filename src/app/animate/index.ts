@@ -4,7 +4,10 @@ import {
     animate,
     keyframes
 } from '@angular/animations';
-
+/**
+ * btn transitioning between two states
+ * @see https://angular.io/guide/animations
+ */
 export const btnState = trigger(
     'btnState',
     [
@@ -40,7 +43,9 @@ export const btnState = trigger(
     ]
 );
 
-// inline styles yellow=>red=>blue
+/**
+ * inline styles yellow=>red=>blue
+ */
 export const btnInlineState = trigger(
     'btnInlineState',
     [
@@ -56,8 +61,9 @@ export const btnInlineState = trigger(
         ])
     ]
 );
-
-// enter and leave animations
+/**
+ * enter and leave animations
+ */
 export const flyInOut = trigger('flyInOut', [
     state('in', style({
         opacity: 1,
@@ -85,6 +91,9 @@ export const flyInOut = trigger('flyInOut', [
     ])
 ]);
 
+/**
+ * Automatic property calculation
+ */
 export const shrinkOut = trigger('shrinkOut', [
     state('in', style({
         height: '*'
