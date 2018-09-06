@@ -1,0 +1,14 @@
+<!--基本的な図形-->
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="250" version="1.1">
+    <rect width="30" height="30" x="10" y="10" fill="transparent" stroke="black" stroke-width="5"/>
+<!--stroke-width:边界宽度,stroke:边框颜色-->
+    <rect width="40" height="30" x="10" y="50" fill="green" stroke="blue" stroke-width="5"/>
+    <circle cx="70" cy="30" r="20" fill="transparent" stroke="red" stroke-width="3"/>
+    <ellipse cx="75" cy="73" fill="pink" stroke="orange" stroke-width="3" rx="20" ry="10"/>
+    <line x1="10" x2="55" y1="90" y2="150" fill="transparent" stroke="black" stroke-width="6"/>
+    <polyline fill="transparent" stroke="red" stroke-width="3" points="60 90, 70 100, 80 95, 90 110, 100 105, 110 120, 120 115, 130 125, 140 120, 150 130, 160 125"/>
+    <polygon fill="transparent" stroke="greenyellow" stroke-width="5" points="30 160, 50 190, 70 170, 150 160"/>
+<!--大写字母，表示采用绝对定位。小写字母，表示采用相对定位-->
+<!--move to (20,230) M 20 230-->
+    <path fill="none" stroke="blue" stroke-width="5" d="M2,230 Q40,205 50,230 T90,230"/>
+</svg>

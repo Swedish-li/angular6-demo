@@ -12,6 +12,7 @@ import { MenuComponent } from './component/menu/menu.component';
 import { AppRoutingModule } from './router/app-routing.module';
 import { AnimationNgComponent } from './page/animation/animation-ng/animation-ng.component';
 import { AnimationCss3Component } from './page/animation/animation-css3/animation-css3.component';
+import { SvgDemo1Component } from './svg/svg-demo1/svg-demo1.component';
 
 registerLocaleData(ja);
 
@@ -24,7 +25,8 @@ registerLocaleData(ja);
     AppComponent,
     MenuComponent,
     AnimationNgComponent,
-    AnimationCss3Component
+    AnimationCss3Component,
+    SvgDemo1Component
   ],
   imports: [
     BrowserModule,
