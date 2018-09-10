@@ -12,7 +12,8 @@ import { MenuComponent } from './component/menu/menu.component';
 import { AppRoutingModule } from './router/app-routing.module';
 import { AnimationNgComponent } from './page/animation/animation-ng/animation-ng.component';
 import { AnimationCss3Component } from './page/animation/animation-css3/animation-css3.component';
-import { SvgDemo1Component } from './svg/svg-demo1/svg-demo1.component';
+import { SvgDemo1Component } from './page/svg/svg-demo1/svg-demo1.component';
+import { EmbeddedSvgComponent } from './page/svg/embedded-svg/embedded-svg.component';
 
 registerLocaleData(ja);
 
@@ -26,7 +27,8 @@ registerLocaleData(ja);
     MenuComponent,
     AnimationNgComponent,
     AnimationCss3Component,
-    SvgDemo1Component
+    SvgDemo1Component,
+    EmbeddedSvgComponent
   ],
   imports: [
     BrowserModule,
