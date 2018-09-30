@@ -1,0 +1,39 @@
+#translate-XY {
+    font-size: 72px;
+    font-weight: 500;
+}
+
+#hinamatsuri {
+    opacity: 0;
+    animation: slowly-show .5s ease 1s 1 normal forwards;
+}
+
+@keyframes slowly-show {
+    to {
+        opacity: 1;
+    }
+}
+
+#hima {
+    transform: translate(328px, 0);
+}
+
+#hi {
+    animation: move-hi .5s ease .5s 1 normal forwards;
+}
+
+@keyframes move-hi {
+    to {
+        transform: translate(-328px, 0);
+    }
+}
+
+#ma {
+    animation: move-ma .5s ease .5s 1 normal forwards;
+}
+
+@keyframes move-ma {
+    to {
+        transform: translate(-196px, 0);
+    }
+}
