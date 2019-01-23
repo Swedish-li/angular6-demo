@@ -1,3 +1,4 @@
+import { BusyModule } from './busy/busy.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -36,7 +37,8 @@ registerLocaleData(ja);
     FormsModule,
     HttpClientModule,
     NgZorroAntdModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BusyModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: ja_JP },

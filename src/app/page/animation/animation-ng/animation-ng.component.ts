@@ -1,3 +1,4 @@
+import { Subscription,Subject } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { btnState, btnInlineState, flyInOut, shrinkOut } from '../../../animate';
 
@@ -21,8 +22,13 @@ export class AnimationNgComponent implements OnInit {
    */
   show: boolean;
 
+  busy: Subscription;
 
-  /**
+  subject: Subject<string>;
+
+
+
+   /**
    * Creates an instance of AnimationNg component.
    */
   constructor() {
@@ -31,6 +37,13 @@ export class AnimationNgComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.subject = new Subject();
+    this.busy = this.subject.subscribe(str => {
+      console.log(str)
+    });
+    setTimeout(() => {
+      this.subject.next('1s next');
+    }, 1000);
   }
 
   btnToggle() {
