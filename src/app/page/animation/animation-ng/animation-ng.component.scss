@@ -1,0 +1,12 @@
+.demo {
+    width: 800px;
+    height: 300px;
+    border: 2px solid blue;
+    position: relative;
+    .busy-demo {
+        // position: relative;
+        width: 200px;
+        height: 200px;
+        border: 2px solid red;
+    }
+}
