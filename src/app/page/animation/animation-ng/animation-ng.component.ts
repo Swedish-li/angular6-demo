@@ -37,13 +37,20 @@ export class AnimationNgComponent implements OnInit {
   }
 
   ngOnInit() {
+
+  }
+
+  showBusy() {
     this.subject = new Subject();
-    this.busy = this.subject.subscribe(str => {
+    this.busy = this.subject.subscribe( str => {
       console.log(str)
-    });
-    setTimeout(() => {
-      this.subject.next('1s next');
-    }, 1000);
+    })
+
+    setTimeout(()=> {
+      this.subject.next('this is next');
+      this.subject.complete();
+    },1000)
+
   }
 
   btnToggle() {

@@ -3,10 +3,12 @@
     height: 300px;
     border: 2px solid blue;
     position: relative;
+    padding: 15px;
     .busy-demo {
         // position: relative;
-        width: 200px;
-        height: 200px;
+        width: 80%;
+        height: 80%;
         border: 2px solid red;
+        margin: auto;
     }
 }
