@@ -1,5 +1,6 @@
 .ng-busy {
     z-index: 1002;
+    // Referencing Parent Selectors: &
     &,
     >*,
     >ng-component>* {
