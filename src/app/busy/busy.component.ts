@@ -30,7 +30,7 @@ export interface IBusyContext {
     selector: 'ng-busy',
     template: `
         <div [class]="wrapperClass" *ngIf="isActive()" @flyInOut>
-            <ng-container 
+            <ng-container
                 *ngComponentOutlet="TemplateComponent; ngModuleFactory: nmf;">
             </ng-container>
         </div>

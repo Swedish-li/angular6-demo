@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'animation-css3', component: AnimationCss3Component },
   { path: 'animation-ng', component: AnimationNgComponent },
   { path: 'svg-demo1', component: SvgDemo1Component },
-  { path: 'embedded-svg', component: EmbeddedSvgComponent }
+  { path: 'embedded-svg', component: EmbeddedSvgComponent },
+  { path: 'geometry', loadChildren: '../geometry/geometry.module#GeometryModule' }
 ];
 
 
