@@ -15,7 +15,6 @@ import { AnimationNgComponent } from './page/animation/animation-ng/animation-ng
 import { AnimationCss3Component } from './page/animation/animation-css3/animation-css3.component';
 import { SvgDemo1Component } from './page/svg/svg-demo1/svg-demo1.component';
 import { EmbeddedSvgComponent } from './page/svg/embedded-svg/embedded-svg.component';
-import { GeometryModule } from './geometry/geometry.module';
 
 registerLocaleData(ja);
 

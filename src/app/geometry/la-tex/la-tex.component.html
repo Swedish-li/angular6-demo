@@ -1,0 +1,7 @@
+<nz-card>
+  <nz-card-meta
+    [nzTitle]="laTex.title"
+    [nzDescription]="laTex.desc"
+  ></nz-card-meta>
+  <ng-katex [equation]="laTex.eq" [options]="{ displayMode: true }"></ng-katex>
+</nz-card>

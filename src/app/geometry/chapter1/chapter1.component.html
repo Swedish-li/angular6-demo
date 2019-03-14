@@ -1,3 +1,6 @@
-<p>
-  chapter1 works!
-</p>
+<!-- http://www.scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/geometry -->
+
+<app-la-tex
+  *ngFor="let item of list; index as i; trackBy: i"
+  [laTex]="item"
+></app-la-tex>
