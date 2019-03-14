@@ -10,7 +10,8 @@ import {
   ViewContainerRef,
   ComponentFactoryResolver,
   ComponentRef,
-  Injector
+  Injector,
+  OnDestroy
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 
@@ -29,10 +30,12 @@ import { BusyBackdropComponent } from './busy-backdrop.component';
  * - `<div [ngBusy]="{busy: busy, message: 'Loading...', backdrop: false, delay: 200, minDuration: 600}">...</div>`
  */
 @Directive({
+  // tslint:disable-next-line: directive-selector
   selector: '[ngBusy]',
   providers: [PromiseTrackerService]
 })
-export class BusyDirective implements DoCheck {
+export class BusyDirective implements DoCheck, OnDestroy {
+  // tslint:disable-next-line: no-input-rename
   @Input('ngBusy') options: any;
   private optionsRecord: any;
   private optionsNorm: IBusyConfig;
@@ -87,6 +90,7 @@ export class BusyDirective implements DoCheck {
       this.busyRef.instance.message = options.message;
     }
 
+    // tslint:disable-next-line: no-unused-expression
     !equals(options.busy, this.tracker.promiseList) &&
       this.tracker.reset({
         promiseList: options.busy,
@@ -104,6 +108,7 @@ export class BusyDirective implements DoCheck {
       this.template = options.template;
       this.backdrop = options.backdrop;
 
+      // tslint:disable-next-line: no-unused-expression
       options.backdrop && this.createBackdrop();
 
       this.createBusy();
@@ -115,7 +120,9 @@ export class BusyDirective implements DoCheck {
   }
 
   private destroyComponents() {
+    // tslint:disable-next-line: no-unused-expression
     this.busyRef && this.busyRef.destroy();
+    // tslint:disable-next-line: no-unused-expression
     this.backdropRef && this.backdropRef.destroy();
   }
 

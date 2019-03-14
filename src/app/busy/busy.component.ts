@@ -4,103 +4,99 @@
  */
 
 import {
-    Component,
-    Compiler,
-    NgModule,
-    NgModuleFactory,
-    DoCheck,
-    OnDestroy
+  Component,
+  Compiler,
+  NgModule,
+  NgModuleFactory,
+  DoCheck,
+  OnDestroy
 } from '@angular/core';
-import {trigger, style, transition, animate} from '@angular/animations';
+import { trigger, style, transition, animate } from '@angular/animations';
 
-import {PromiseTrackerService} from './promise-tracker.service';
-
+import { PromiseTrackerService } from './promise-tracker.service';
 
 const inactiveStyle = style({
-    opacity: 0,
-    transform: 'translateY(-40px)'
+  opacity: 0,
+  transform: 'translateY(-40px)'
 });
 const timing = '.3s ease';
 
 export interface IBusyContext {
-    message: string;
-};
+  message: string;
+}
 
 @Component({
-    selector: 'ng-busy',
-    template: `
-        <div [class]="wrapperClass" *ngIf="isActive()" @flyInOut>
-            <ng-container
-                *ngComponentOutlet="TemplateComponent; ngModuleFactory: nmf;">
-            </ng-container>
-        </div>
-    `,
-    animations: [
-        trigger('flyInOut', [
-            transition('void => *', [
-                inactiveStyle,
-                animate(timing)
-            ]),
-            transition('* => void', [
-                animate(timing, inactiveStyle)
-            ])
-        ])
-    ]
+  // tslint:disable-next-line: component-selector
+  selector: 'ng-busy',
+  template: `
+    <div [class]="wrapperClass" *ngIf="isActive()" @flyInOut>
+      <ng-container
+        *ngComponentOutlet="TemplateComponent; ngModuleFactory: nmf"
+      >
+      </ng-container>
+    </div>
+  `,
+  animations: [
+    trigger('flyInOut', [
+      transition('void => *', [inactiveStyle, animate(timing)]),
+      transition('* => void', [animate(timing, inactiveStyle)])
+    ])
+  ]
 })
 export class BusyComponent implements DoCheck, OnDestroy {
-    TemplateComponent;
-    nmf: NgModuleFactory<any>;
-    wrapperClass: string;
-    template: string;
-    message: string;
-    private lastMessage: string;
+  TemplateComponent;
+  nmf: NgModuleFactory<any>;
+  wrapperClass: string;
+  template: string;
+  message: string;
+  private lastMessage: string;
 
-    constructor(
-        private tracker: PromiseTrackerService,
-        private compiler: Compiler
-    ) {}
+  constructor(
+    private tracker: PromiseTrackerService,
+    private compiler: Compiler
+  ) {}
 
-    ngDoCheck() {
-        if (this.message === this.lastMessage) {
-            return;
-        }
-        this.lastMessage = this.message;
-        this.clearDynamicTemplateCache();
-        this.createDynamicTemplate();
+  ngDoCheck() {
+    if (this.message === this.lastMessage) {
+      return;
+    }
+    this.lastMessage = this.message;
+    this.clearDynamicTemplateCache();
+    this.createDynamicTemplate();
+  }
+
+  ngOnDestroy(): void {
+    this.clearDynamicTemplateCache();
+  }
+
+  createDynamicTemplate() {
+    const { template, message } = this;
+
+    @Component({ template })
+    class TemplateComponent {
+      message: string = message;
     }
 
-    ngOnDestroy(): void {
-        this.clearDynamicTemplateCache();
+    @NgModule({
+      declarations: [TemplateComponent],
+      entryComponents: [TemplateComponent]
+    })
+    class TemplateModule {}
+
+    this.TemplateComponent = TemplateComponent;
+    this.nmf = this.compiler.compileModuleSync(TemplateModule);
+  }
+
+  clearDynamicTemplateCache() {
+    if (!this.nmf) {
+      return;
     }
 
-    createDynamicTemplate() {
-        const {template, message} = this;
+    this.compiler.clearCacheFor(this.nmf.moduleType);
+    this.nmf = null;
+  }
 
-        @Component({template})
-        class TemplateComponent {
-            message: string = message;
-        }
-
-        @NgModule({
-            declarations: [TemplateComponent],
-            entryComponents: [TemplateComponent]
-        })
-        class TemplateModule {}
-
-        this.TemplateComponent = TemplateComponent;
-        this.nmf = this.compiler.compileModuleSync(TemplateModule);
-    }
-
-    clearDynamicTemplateCache() {
-        if (!this.nmf) {
-            return;
-        }
-
-        this.compiler.clearCacheFor(this.nmf.moduleType);
-        this.nmf = null;
-    }
-
-    isActive() {
-        return this.tracker.isActive();
-    }
+  isActive() {
+    return this.tracker.isActive();
+  }
 }
