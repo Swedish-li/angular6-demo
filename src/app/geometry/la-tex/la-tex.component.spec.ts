@@ -1,3 +1,5 @@
+import { KatexModule } from 'ng-katex';
+import { MaterialModule } from './../../shared/material.module';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LaTexComponent } from './la-tex.component';
@@ -8,13 +10,18 @@ describe('LaTexComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LaTexComponent ]
-    })
-    .compileComponents();
+      declarations: [LaTexComponent],
+      imports: [MaterialModule, KatexModule]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(LaTexComponent);
+    fixture.componentRef.instance.laTex = {
+      title: 'test',
+      desc: 'test-desc',
+      eq: 'a'
+    };
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,3 +1,5 @@
+import { KatexModule } from 'ng-katex';
+import { MaterialModule } from './../../shared/material.module';
 import { LaTexComponent } from './../la-tex/la-tex.component';
 import { DashboardComponent } from './../dashboard/dashboard.component';
 import { Chapter2Component } from './../chapter2/chapter2.component';
@@ -21,7 +23,7 @@ describe('GeometryHomeComponent', () => {
         DashboardComponent,
         LaTexComponent
       ],
-      imports: [RouterModule.forRoot(routes)]
+      imports: [RouterModule.forRoot(routes), MaterialModule, KatexModule]
     }).compileComponents();
   }));
 
