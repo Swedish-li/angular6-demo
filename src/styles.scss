@@ -8,13 +8,11 @@
 @import './app/busy/style/busy';
 @import '~katex/dist/katex.css';
 
-[nz-button] {
-    margin-right: 8px;
-    margin-bottom: 12px;
-}
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

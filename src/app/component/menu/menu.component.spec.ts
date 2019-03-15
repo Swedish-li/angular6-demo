@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MenuComponent } from './menu.component';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('MenuComponent', () => {
@@ -12,7 +11,6 @@ describe('MenuComponent', () => {
     TestBed.configureTestingModule({
       declarations: [MenuComponent],
       imports: [
-        NgZorroAntdModule,
         BrowserAnimationsModule
       ]
     })

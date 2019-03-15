@@ -5,13 +5,10 @@ import { GeometryHomeComponent } from './geometry-home/geometry-home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
-    component: GeometryHomeComponent,
-    // children: [
-     
-    // ]
+    component: GeometryHomeComponent
   },
   { path: 'chapter1', component: Chapter1Component },
   { path: 'chapter2', component: Chapter2Component },

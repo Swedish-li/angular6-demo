@@ -1,7 +1,19 @@
-<nz-card>
+<!-- <nz-card>
   <nz-card-meta
     [nzTitle]="laTex.title"
     [nzDescription]="laTex.desc"
   ></nz-card-meta>
   <ng-katex [equation]="laTex.eq" [options]="{ displayMode: true }"></ng-katex>
-</nz-card>
+</nz-card> -->
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ laTex.title }}</mat-card-title>
+    <mat-card-subtitle>{{ laTex.desc }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <ng-katex
+      [equation]="laTex.eq"
+      [options]="{ displayMode: true }"
+    ></ng-katex>
+  </mat-card-content>
+</mat-card>

@@ -1,4 +1,4 @@
-import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { MaterialModule } from './../shared/material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -15,7 +15,7 @@ import { LaTexComponent } from './la-tex/la-tex.component';
     CommonModule,
     GeometryRoutingModule,
     KatexModule,
-    NgZorroAntdModule
+    MaterialModule
   ],
   declarations: [
     Chapter1Component,

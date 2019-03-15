@@ -1,6 +1,5 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { MenuComponent } from './component/menu/menu.component';
 import { AppRoutingModule } from './router/app-routing.module';
 import { AnimationNgComponent } from './page/animation/animation-ng/animation-ng.component';
@@ -22,7 +21,6 @@ describe('AppComponent', () => {
         EmbeddedSvgComponent
       ],
       imports: [
-        NgZorroAntdModule,
         AppRoutingModule,
         BusyModule,
         BrowserAnimationsModule

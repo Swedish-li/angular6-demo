@@ -1,4 +1,4 @@
-<nz-layout>
+<!-- <nz-layout>
   <nz-header>
     <h1 class="title">{{title}}</h1>
   </nz-header>
@@ -14,4 +14,16 @@
       </div>
     </nz-content>
   </nz-layout>
-</nz-layout>
+</nz-layout> -->
+
+<div class="container">
+  <header>
+    <h1 class="title">{{ title }}</h1>
+  </header>
+  <nav>
+    <app-menu></app-menu>
+  </nav>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>
