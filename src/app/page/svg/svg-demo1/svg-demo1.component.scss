@@ -1,39 +1,51 @@
+.nav {
+  background-image: url(/assets/line.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: auto 3px;
+  &:hover {
+    background-size: cover;
+    color: white;
+  }
+  
+}
+
 #translate-XY {
-    font-size: 72px;
-    font-weight: 500;
+  font-size: 72px;
+  font-weight: 500;
 }
 
 #hinamatsuri {
-    opacity: 0;
-    animation: slowly-show .5s ease 1s 1 normal forwards;
+  opacity: 0;
+  animation: slowly-show 0.5s ease 1s 1 normal forwards;
 }
 
 @keyframes slowly-show {
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 
 #hima {
-    transform: translate(328px, 0);
+  transform: translate(328px, 0);
 }
 
 #hi {
-    animation: move-hi .5s ease .5s 1 normal forwards;
+  animation: move-hi 0.5s ease 0.5s 1 normal forwards;
 }
 
 @keyframes move-hi {
-    to {
-        transform: translate(-328px, 0);
-    }
+  to {
+    transform: translate(-328px, 0);
+  }
 }
 
 #ma {
-    animation: move-ma .5s ease .5s 1 normal forwards;
+  animation: move-ma 0.5s ease 0.5s 1 normal forwards;
 }
 
 @keyframes move-ma {
-    to {
-        transform: translate(-196px, 0);
-    }
+  to {
+    transform: translate(-196px, 0);
+  }
 }
