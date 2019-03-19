@@ -1,28 +1,21 @@
-<ul>
-  <li nz-submenu>
-    <span><i class="anticon anticon-profile"></i>Web</span>
-    <ul>
-      <li>
-        <span>Animation</span>
-        <ul>
-          <li routerLink="/animation-css3">CSS3</li>
-          <li routerLink="/animation-ng">Angular</li>
-        </ul>
-      </li>
-      <li>
-        <span>Svg</span>
-        <ul>
-          <li routerLink="/svg-demo1">demo1</li>
-          <li routerLink="/embedded-svg">Embedded SVG</li>
-        </ul>
-      </li>
+<button mat-fab color="primary" [matMenuTriggerFor]="webTech">Web</button>
 
-      <li>
-        <span>Math</span>
-        <ul>
-          <li routerLink="/geometry">Geometry</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
+<mat-menu #webTech="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="animation">Animation</button>
+  <button mat-menu-item [matMenuTriggerFor]="svg">Svg</button>
+  <button mat-menu-item [matMenuTriggerFor]="math">Math</button>
+</mat-menu>
+
+<mat-menu #animation="matMenu">
+  <button mat-menu-item routerLink="/animation-css3">CSS3</button>
+  <button mat-menu-item routerLink="/animation-ng">Angular</button>
+</mat-menu>
+
+<mat-menu #svg="matMenu">
+  <button mat-menu-item routerLink="/svg-demo1">demo1</button>
+  <button mat-menu-item routerLink="/embedded-svg">Embedded SVG</button>
+</mat-menu>
+
+<mat-menu #math="matMenu">
+  <button mat-menu-item routerLink="/geometry">Geometry</button>
+</mat-menu>
