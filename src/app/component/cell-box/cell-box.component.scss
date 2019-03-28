@@ -1,0 +1,10 @@
+:host {
+    max-width: 200px;
+}
+
+.cell-text {
+  max-width: 200px;
+  text-overflow: ellipsis;
+  display: table-cell;
+  overflow: hidden;
+}

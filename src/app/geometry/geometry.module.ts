@@ -9,20 +9,17 @@ import { GeometryHomeComponent } from './geometry-home/geometry-home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { KatexModule } from 'ng-katex';
 import { LaTexComponent } from './la-tex/la-tex.component';
+import { CellBoxComponent } from '../component/cell-box/cell-box.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    GeometryRoutingModule,
-    KatexModule,
-    MaterialModule
-  ],
+  imports: [CommonModule, GeometryRoutingModule, KatexModule, MaterialModule],
   declarations: [
     Chapter1Component,
     Chapter2Component,
     GeometryHomeComponent,
     DashboardComponent,
-    LaTexComponent
+    LaTexComponent,
+    CellBoxComponent
   ]
 })
 export class GeometryModule {}

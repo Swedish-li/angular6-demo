@@ -1,3 +1,4 @@
+import { MaterialModule } from './shared/material.module';
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './component/menu/menu.component';
@@ -23,7 +24,8 @@ describe('AppComponent', () => {
       imports: [
         AppRoutingModule,
         BusyModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        MaterialModule
       ],
       providers: [
         {
@@ -47,5 +49,9 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('.title').textContent).toContain('angular demo');
+
+    fixture.componentInstance.title = 'angular2';
+    fixture.detectChanges();
+    expect(compiled.querySelector('.title').textContent).toContain('angular2');
   }));
 });
