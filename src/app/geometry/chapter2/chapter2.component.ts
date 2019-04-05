@@ -1,3 +1,4 @@
+import { ResizeSensor } from './../../common/utils/resize-sensor';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Chapter2Component implements OnInit {
 
-  constructor() { }
+  resizeSensor: ResizeSensor;
+
+  constructor() {
+    this.resizeSensor = new ResizeSensor(document.body, () => {
+      console.info(document.body.getBoundingClientRect());
+    });
+  }
 
   ngOnInit() {
   }

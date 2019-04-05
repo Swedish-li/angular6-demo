@@ -31,7 +31,6 @@ export class CellBoxComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     console.warn(this.textBox);
     const ele = this.textBox.nativeElement as HTMLElement;
-    // console.info(ele.children.item(1).);
 
     if (ele.offsetWidth < ele.scrollWidth) {
       this.hasToolTip = true;
