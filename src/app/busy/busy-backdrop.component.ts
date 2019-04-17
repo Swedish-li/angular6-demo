@@ -6,7 +6,7 @@
 import { Component } from '@angular/core';
 import {
   trigger,
-  state,
+  // state,
   style,
   transition,
   animate

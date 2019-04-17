@@ -3,21 +3,21 @@
  * @author yumao<yuzhang.lille@gmail.com>
  */
 
-import {NgModule, Compiler} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {ModuleWithProviders} from '@angular/core';
-import {JitCompilerFactory} from '@angular/platform-browser-dynamic';
+import { NgModule, Compiler } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ModuleWithProviders } from '@angular/core';
+import { JitCompilerFactory } from '@angular/platform-browser-dynamic';
 
-import {BusyDirective} from './busy.directive';
-import {BusyService} from './busy.service';
-import {BusyBackdropComponent} from './busy-backdrop.component';
-import {BusyComponent} from './busy.component';
-import {BusyConfig} from './busy-config';
+import { BusyDirective } from './busy.directive';
+import { BusyService } from './busy.service';
+import { BusyBackdropComponent } from './busy-backdrop.component';
+import { BusyComponent } from './busy.component';
+import { BusyConfig } from './busy-config';
 
 // Workaround for Compiler in AOT
 // https://github.com/angular/angular/issues/15510#issuecomment-294301758
 export function createJitCompiler() {
-    return new JitCompilerFactory().createCompiler([{ useJit: true}]);
+    return new JitCompilerFactory().createCompiler([{ useJit: true }]);
 }
 
 @NgModule({
@@ -31,7 +31,7 @@ export function createJitCompiler() {
     ],
     providers: [
         BusyService,
-        {provide: Compiler, useFactory: createJitCompiler},
+        { provide: Compiler, useFactory: createJitCompiler },
     ],
     exports: [BusyDirective],
     entryComponents: [
@@ -44,7 +44,7 @@ export class BusyModule {
         return {
             ngModule: BusyModule,
             providers: [
-                {provide: BusyConfig, useValue: config}
+                { provide: BusyConfig, useValue: config }
             ]
         };
     }

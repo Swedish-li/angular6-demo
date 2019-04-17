@@ -3,9 +3,9 @@
  * @author yumao<yuzhang.lille@gmail.com>
  */
 
-import {Injectable, Optional} from '@angular/core';
+import { Injectable, Optional } from '@angular/core';
 
-import {BusyConfig} from './busy-config';
+import { BusyConfig } from './busy-config';
 
 @Injectable()
 export class BusyService {

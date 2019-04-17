@@ -25,6 +25,7 @@ export interface IBusyContext {
   message: string;
 }
 
+// https://blog.angularindepth.com/exploring-angular-dom-abstractions-80b3ebcfc02
 @Component({
   // tslint:disable-next-line: component-selector
   selector: 'ng-busy',
@@ -44,7 +45,7 @@ export interface IBusyContext {
   ]
 })
 export class BusyComponent implements DoCheck, OnDestroy {
-  TemplateComponent;
+  TemplateComponent: any;
   nmf: NgModuleFactory<any>;
   wrapperClass: string;
   template: string;
@@ -68,7 +69,8 @@ export class BusyComponent implements DoCheck, OnDestroy {
   ngOnDestroy(): void {
     this.clearDynamicTemplateCache();
   }
-
+  // 根据属性 template,message 动态生成模板
+  // https://blog.angularindepth.com/here-is-what-you-need-to-know-about-dynamic-components-in-angular-ac1e96167f9e
   createDynamicTemplate() {
     const { template, message } = this;
 

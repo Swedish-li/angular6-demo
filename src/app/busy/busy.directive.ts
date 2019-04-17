@@ -50,7 +50,7 @@ export class BusyDirective implements DoCheck, OnDestroy {
     private cfResolver: ComponentFactoryResolver,
     private vcRef: ViewContainerRef,
     private injector: Injector
-  ) {}
+  ) { }
 
   private normalizeOptions(options: any) {
     if (!options) {
