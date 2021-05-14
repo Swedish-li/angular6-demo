@@ -14,7 +14,7 @@ import {
   styleUrls: ['./cell-box.component.scss']
 })
 export class CellBoxComponent implements OnInit, AfterViewInit {
-  @ViewChild('textBox')
+  @ViewChild('textBox', { static: true })
   textBox: ElementRef;
 
   @Input()

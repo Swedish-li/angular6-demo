@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'animation-ng', component: AnimationNgComponent },
   { path: 'svg-demo1', component: SvgDemo1Component },
   { path: 'embedded-svg', component: EmbeddedSvgComponent },
-  { path: 'geometry', loadChildren: '../geometry/geometry.module#GeometryModule' }
+  { path: 'geometry', loadChildren: () => import('../geometry/geometry.module').then(m => m.GeometryModule) }
 ];
 
 
