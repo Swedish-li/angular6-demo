@@ -1,4 +1,4 @@
-import { Subscription,Subject } from 'rxjs';
+import { Subscription, Subject } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { btnState, btnInlineState, flyInOut, shrinkOut } from '../../../animate';
 
@@ -43,13 +43,13 @@ export class AnimationNgComponent implements OnInit {
   showBusy() {
     this.subject = new Subject();
     this.busy = this.subject.subscribe( str => {
-      console.log(str)
-    })
+      console.log(str);
+    });
 
-    setTimeout(()=> {
+    setTimeout(() => {
       this.subject.next('this is next');
       this.subject.complete();
-    },1000)
+    }, 1000);
 
   }
 

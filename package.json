@@ -13,12 +13,12 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^8.2.14",
-    "@angular/cdk": "^7.3.4",
+    "@angular/cdk": "^8.2.3",
     "@angular/common": "^8.2.14",
     "@angular/compiler": "^8.2.14",
     "@angular/core": "^8.2.14",
     "@angular/forms": "^8.2.14",
-    "@angular/material": "^7.3.4",
+    "@angular/material": "^8.2.3",
     "@angular/platform-browser": "^8.2.14",
     "@angular/platform-browser-dynamic": "^8.2.14",
     "@angular/router": "^8.2.14",
@@ -45,9 +45,11 @@
     "karma-coverage-istanbul-reporter": "~2.0.0",
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "prettier": "2.3.0",
     "protractor": "~5.3.0",
     "ts-node": "~5.0.1",
-    "tslint": "~5.9.1",
+    "tslint": "~5.20.0",
+    "tslint-config-prettier": "^1.18.0",
     "typedoc": "^0.12.0",
     "typescript": "~3.5.3"
   }

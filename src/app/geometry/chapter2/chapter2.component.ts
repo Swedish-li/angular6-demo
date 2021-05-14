@@ -12,7 +12,7 @@ export class Chapter2Component implements OnInit {
 
   constructor() {
     this.resizeSensor = new ResizeSensor(document.body, () => {
-      console.info(document.body.getBoundingClientRect());
+      console.log(document.body.getBoundingClientRect());
     });
   }
 

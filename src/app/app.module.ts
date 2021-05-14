@@ -7,7 +7,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-// import { NgZorroAntdModule, NZ_I18N, ja_JP } from 'ng-zorro-antd';
 import {
   registerLocaleData,
   LocationStrategy,
