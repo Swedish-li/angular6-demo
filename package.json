@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open --progress",
-    "build": "ng build --prod --base-href /",
+    "build": "ng build --configuration production --source-map --base-href /",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",

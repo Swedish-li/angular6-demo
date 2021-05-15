@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { CellBoxComponent } from 'src/app/component/cell-box/cell-box.component';
+import { MaterialModule } from 'src/app/shared/material.module';
 
 import { Chapter2Component } from './chapter2.component';
 
@@ -8,7 +10,8 @@ describe('Chapter2Component', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [Chapter2Component],
+      declarations: [Chapter2Component, CellBoxComponent],
+      imports: [MaterialModule],
     }).compileComponents();
   }));
 

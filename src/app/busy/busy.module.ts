@@ -17,7 +17,8 @@ import { BusyService } from './busy.service';
 // Workaround for Compiler in AOT
 // https://github.com/angular/angular/issues/15510#issuecomment-294301758
 export function createJitCompiler() {
-  return new JitCompilerFactory().createCompiler([{ useJit: true }]);
+  // @ts-ignore
+  return new JitCompilerFactory([]).createCompiler([{ useJit: true }]);
 }
 
 @NgModule({

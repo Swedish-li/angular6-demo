@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
 import { KatexModule } from 'ng-katex';
+import { CellBoxComponent } from 'src/app/component/cell-box/cell-box.component';
 import { MaterialModule } from './../../shared/material.module';
 import { Chapter1Component } from './../chapter1/chapter1.component';
 import { Chapter2Component } from './../chapter2/chapter2.component';
@@ -22,6 +23,7 @@ describe('GeometryHomeComponent', () => {
         GeometryHomeComponent,
         DashboardComponent,
         LaTexComponent,
+        CellBoxComponent
       ],
       imports: [RouterModule.forRoot(routes), MaterialModule, KatexModule],
     }).compileComponents();
