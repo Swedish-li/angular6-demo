@@ -3,19 +3,19 @@
  * @author yumao<yuzhang.lille@gmail.com>
  */
 
-import { Component } from '@angular/core';
 import {
-  trigger,
+  animate,
   // state,
   style,
   transition,
-  animate
+  trigger,
 } from '@angular/animations';
+import { Component } from '@angular/core';
 
 import { PromiseTrackerService } from './promise-tracker.service';
 
 const inactiveStyle = style({
-  opacity: 0
+  opacity: 0,
 });
 const timing = '.3s ease';
 
@@ -28,9 +28,9 @@ const timing = '.3s ease';
   animations: [
     trigger('fadeInOut', [
       transition('void => *', [inactiveStyle, animate(timing)]),
-      transition('* => void', [animate(timing, inactiveStyle)])
-    ])
-  ]
+      transition('* => void', [animate(timing, inactiveStyle)]),
+    ]),
+  ],
 })
 export class BusyBackdropComponent {
   constructor(private tracker: PromiseTrackerService) {}

@@ -1,15 +1,15 @@
 .container {
-    display: flex;
-    flex-flow: row wrap;
-    &>header {
-        width: 100%;
-        padding: 20px;
-    }
-    &>nav {
-        width: 300px;
-    }
-    &>main {
-        flex-grow: 1;
-        align-self: center;
-    }
+  display: flex;
+  flex-flow: row wrap;
+  & > header {
+    width: 100%;
+    padding: 20px;
+  }
+  & > nav {
+    width: 300px;
+  }
+  & > main {
+    flex-grow: 1;
+    align-self: center;
+  }
 }

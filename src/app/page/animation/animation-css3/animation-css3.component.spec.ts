@@ -8,9 +8,8 @@ describe('AnimationCss3Component', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AnimationCss3Component ]
-    })
-    .compileComponents();
+      declarations: [AnimationCss3Component],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -2,17 +2,22 @@
 
 //bootstrap
 // @import "../node_modules/bootstrap/scss/bootstrap-variables.scss";
-// @import '~bootstrap/scss/bootstrap.scss'; 
-// @import '~bootstrap/scss/bootstrap-grid.scss'; 
+// @import '~bootstrap/scss/bootstrap.scss';
+// @import '~bootstrap/scss/bootstrap-grid.scss';
 // @import '~bootstrap/scss/bootstrap-reboot.scss';
 @import './app/busy/style/busy';
 @import '~katex/dist/katex.css';
 
-
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}

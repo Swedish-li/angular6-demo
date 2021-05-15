@@ -1,13 +1,12 @@
-import { ResizeSensor } from './../../common/utils/resize-sensor';
 import { Component, OnInit } from '@angular/core';
+import { ResizeSensor } from './../../common/utils/resize-sensor';
 
 @Component({
   selector: 'app-chapter2',
   templateUrl: './chapter2.component.html',
-  styleUrls: ['./chapter2.component.scss']
+  styleUrls: ['./chapter2.component.scss'],
 })
 export class Chapter2Component implements OnInit {
-
   resizeSensor: ResizeSensor;
 
   constructor() {
@@ -16,7 +15,5 @@ export class Chapter2Component implements OnInit {
     });
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

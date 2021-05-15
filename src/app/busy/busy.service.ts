@@ -9,9 +9,9 @@ import { BusyConfig } from './busy-config';
 
 @Injectable()
 export class BusyService {
-    config: BusyConfig;
+  config: BusyConfig;
 
-    constructor(@Optional() config: BusyConfig) {
-        this.config = config || new BusyConfig();
-    }
+  constructor(@Optional() config: BusyConfig) {
+    this.config = config || new BusyConfig();
+  }
 }

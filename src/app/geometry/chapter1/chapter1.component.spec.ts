@@ -1,7 +1,7 @@
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { KatexModule } from 'ng-katex';
 import { MaterialModule } from './../../shared/material.module';
 import { LaTexComponent } from './../la-tex/la-tex.component';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Chapter1Component } from './chapter1.component';
 
@@ -12,7 +12,7 @@ describe('Chapter1Component', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [Chapter1Component, LaTexComponent],
-      imports: [MaterialModule, KatexModule]
+      imports: [MaterialModule, KatexModule],
     }).compileComponents();
   }));
 

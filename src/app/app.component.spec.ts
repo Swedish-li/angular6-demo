@@ -1,15 +1,15 @@
-import { MaterialModule } from './shared/material.module';
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { MenuComponent } from './component/menu/menu.component';
-import { AppRoutingModule } from './router/app-routing.module';
-import { AnimationNgComponent } from './page/animation/animation-ng/animation-ng.component';
-import { AnimationCss3Component } from './page/animation/animation-css3/animation-css3.component';
-import { SvgDemo1Component } from './page/svg/svg-demo1/svg-demo1.component';
-import { EmbeddedSvgComponent } from './page/svg/embedded-svg/embedded-svg.component';
-import { BusyModule } from './busy';
 import { APP_BASE_HREF } from '@angular/common';
+import { async, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppComponent } from './app.component';
+import { BusyModule } from './busy';
+import { MenuComponent } from './component/menu/menu.component';
+import { AnimationCss3Component } from './page/animation/animation-css3/animation-css3.component';
+import { AnimationNgComponent } from './page/animation/animation-ng/animation-ng.component';
+import { EmbeddedSvgComponent } from './page/svg/embedded-svg/embedded-svg.component';
+import { SvgDemo1Component } from './page/svg/svg-demo1/svg-demo1.component';
+import { AppRoutingModule } from './router/app-routing.module';
+import { MaterialModule } from './shared/material.module';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -19,19 +19,20 @@ describe('AppComponent', () => {
         AnimationNgComponent,
         AnimationCss3Component,
         SvgDemo1Component,
-        EmbeddedSvgComponent
+        EmbeddedSvgComponent,
       ],
       imports: [
         AppRoutingModule,
         BusyModule,
         BrowserAnimationsModule,
-        MaterialModule
+        MaterialModule,
       ],
       providers: [
         {
-          provide: APP_BASE_HREF, useValue: '/'
-        }
-      ]
+          provide: APP_BASE_HREF,
+          useValue: '/',
+        },
+      ],
     }).compileComponents();
   }));
   it('should create the app', async(() => {
@@ -48,7 +49,9 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.title').textContent).toContain('angular demo');
+    expect(compiled.querySelector('.title').textContent).toContain(
+      'angular demo'
+    );
 
     fixture.componentInstance.title = 'angular2';
     fixture.detectChanges();

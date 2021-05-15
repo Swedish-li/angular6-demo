@@ -3,21 +3,21 @@
  * @author yumao<yuzhang.lille@gmail.com>
  */
 
+import { animate, style, transition, trigger } from '@angular/animations';
 import {
-  Component,
   Compiler,
+  Component,
+  DoCheck,
   NgModule,
   NgModuleFactory,
-  DoCheck,
-  OnDestroy
+  OnDestroy,
 } from '@angular/core';
-import { trigger, style, transition, animate } from '@angular/animations';
 
 import { PromiseTrackerService } from './promise-tracker.service';
 
 const inactiveStyle = style({
   opacity: 0,
-  transform: 'translateY(-40px)'
+  transform: 'translateY(-40px)',
 });
 const timing = '.3s ease';
 
@@ -40,9 +40,9 @@ export interface IBusyContext {
   animations: [
     trigger('flyInOut', [
       transition('void => *', [inactiveStyle, animate(timing)]),
-      transition('* => void', [animate(timing, inactiveStyle)])
-    ])
-  ]
+      transition('* => void', [animate(timing, inactiveStyle)]),
+    ]),
+  ],
 })
 export class BusyComponent implements DoCheck, OnDestroy {
   TemplateComponent: any;
@@ -81,7 +81,7 @@ export class BusyComponent implements DoCheck, OnDestroy {
 
     @NgModule({
       declarations: [TemplateComponent],
-      entryComponents: [TemplateComponent]
+      entryComponents: [TemplateComponent],
     })
     class TemplateModule {}
 

@@ -13,7 +13,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatToolbarModule,
     MatMenuModule,
     MatButtonModule,
-    MatTooltipModule
+    MatTooltipModule,
   ],
   exports: [
     MatCardModule,
@@ -21,7 +21,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatToolbarModule,
     MatMenuModule,
     MatButtonModule,
-    MatTooltipModule
-  ]
+    MatTooltipModule,
+  ],
 })
 export class MaterialModule {}

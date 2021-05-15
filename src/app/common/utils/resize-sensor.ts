@@ -42,7 +42,6 @@ interface ResizeElement extends HTMLElement {
   resizedAttached: EventQueue;
 
   resizeSensor: ResizeSensorEle;
-
 }
 
 function createDivElement(): HTMLDivElement {
@@ -102,14 +101,14 @@ function getElementSize(ele: HTMLElement): SizeInfo {
   if (!ele.getBoundingClientRect) {
     return {
       width: ele.offsetWidth,
-      height: ele.offsetHeight
+      height: ele.offsetHeight,
     };
   }
 
   const rect = ele.getBoundingClientRect();
   return {
     width: Math.round(rect.width),
-    height: Math.round(rect.height)
+    height: Math.round(rect.height),
   };
 }
 
@@ -155,7 +154,11 @@ export class ResizeSensor {
     const position = computedStyle
       ? computedStyle.getPropertyValue('position')
       : null;
-    if ('absolute' !== position && 'relative' !== position && 'fixed' !== position) {
+    if (
+      'absolute' !== position &&
+      'relative' !== position &&
+      'fixed' !== position
+    ) {
       element.style.position = 'relative';
     }
 
@@ -173,8 +176,8 @@ export class ResizeSensor {
       const width = element.offsetWidth;
       const height = element.offsetHeight;
 
-      expandChild.style.width = (width + 10) + 'px';
-      expandChild.style.height = (height + 10) + 'px';
+      expandChild.style.width = width + 10 + 'px';
+      expandChild.style.height = height + 10 + 'px';
 
       expand.scrollLeft = width + 10;
       expand.scrollTop = height + 10;
@@ -186,7 +189,8 @@ export class ResizeSensor {
     const reset = () => {
       // Check if element is hidden
       if (initialHiddenCheck) {
-        const invisible = element.offsetWidth === 0 && element.offsetHeight === 0;
+        const invisible =
+          element.offsetWidth === 0 && element.offsetHeight === 0;
         if (invisible) {
           // Check in next frame
           if (!lastAnimationFrame) {
@@ -213,7 +217,9 @@ export class ResizeSensor {
     const onResized = () => {
       rafId = 0;
 
-      if (!dirty) { return; }
+      if (!dirty) {
+        return;
+      }
 
       lastWidth = size.width;
       lastHeight = size.height;
@@ -250,24 +256,28 @@ export class ResizeSensor {
 
     const styleChild = 'position: absolute; left: 0; top: 0; transition: 0s;';
     divEle.style.cssText = divStyle;
-    divEle.innerHTML = `<div class="resize-sensor-expand" style="${divStyle}">` +
+    divEle.innerHTML =
+      `<div class="resize-sensor-expand" style="${divStyle}">` +
       `<div style="${styleChild}"></div></div>` +
-      `<div class="resize-sensor-shrink" style="${divStyle}">`
-      + `<div style="${styleChild} width: 200%; height: 200%"></div></div>`;
+      `<div class="resize-sensor-shrink" style="${divStyle}">` +
+      `<div style="${styleChild} width: 200%; height: 200%"></div></div>`;
 
     return divEle as ResizeSensorEle;
   }
-
 
   static detach(
     element: HTMLElement | HTMLElement[],
     callback?: ResizeSensorCallback
   ): void {
     forEachElement(element, function (elem: ResizeElement) {
-      if (!elem) { return; }
+      if (!elem) {
+        return;
+      }
       if (elem.resizedAttached && typeof callback === 'function') {
         elem.resizedAttached.remove(callback);
-        if (elem.resizedAttached.length()) { return; }
+        if (elem.resizedAttached.length()) {
+          return;
+        }
       }
       if (elem.resizeSensor) {
         if (elem.contains(elem.resizeSensor)) {
@@ -283,7 +293,10 @@ export class ResizeSensor {
       el.resizeSensor.resetSensor();
     });
   }
-  constructor(private el: HTMLElement | HTMLElement[], callback: ResizeSensorCallback) {
+  constructor(
+    private el: HTMLElement | HTMLElement[],
+    callback: ResizeSensorCallback
+  ) {
     forEachElement(el, (ele: ResizeElement) => {
       ResizeSensor.attachResizeEvent(ele, callback);
     });
@@ -310,7 +323,6 @@ export class ResizeSensor {
         });
       });
     }
-
   }
 
   detach(callback?: ResizeSensorCallback): void {
@@ -320,5 +332,4 @@ export class ResizeSensor {
     const el = this.el as ResizeElement;
     el.resizeSensor.resetSensor();
   }
-
 }

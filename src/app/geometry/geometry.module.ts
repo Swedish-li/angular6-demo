@@ -1,15 +1,15 @@
-import { MaterialModule } from './../shared/material.module';
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { MaterialModule } from './../shared/material.module';
 
-import { GeometryRoutingModule } from './geometry-routing.module';
+import { KatexModule } from 'ng-katex';
+import { CellBoxComponent } from '../component/cell-box/cell-box.component';
 import { Chapter1Component } from './chapter1/chapter1.component';
 import { Chapter2Component } from './chapter2/chapter2.component';
-import { GeometryHomeComponent } from './geometry-home/geometry-home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { KatexModule } from 'ng-katex';
+import { GeometryHomeComponent } from './geometry-home/geometry-home.component';
+import { GeometryRoutingModule } from './geometry-routing.module';
 import { LaTexComponent } from './la-tex/la-tex.component';
-import { CellBoxComponent } from '../component/cell-box/cell-box.component';
 
 @NgModule({
   imports: [CommonModule, GeometryRoutingModule, KatexModule, MaterialModule],
@@ -19,7 +19,7 @@ import { CellBoxComponent } from '../component/cell-box/cell-box.component';
     GeometryHomeComponent,
     DashboardComponent,
     LaTexComponent,
-    CellBoxComponent
-  ]
+    CellBoxComponent,
+  ],
 })
 export class GeometryModule {}

@@ -1,8 +1,8 @@
-import { MaterialModule } from './../../shared/material.module';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MaterialModule } from './../../shared/material.module';
 
-import { MenuComponent } from './menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MenuComponent } from './menu.component';
 
 describe('MenuComponent', () => {
   let component: MenuComponent;
@@ -11,7 +11,7 @@ describe('MenuComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [MenuComponent],
-      imports: [BrowserAnimationsModule, MaterialModule]
+      imports: [BrowserAnimationsModule, MaterialModule],
     }).compileComponents();
   }));
 

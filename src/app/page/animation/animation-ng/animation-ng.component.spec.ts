@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AnimationNgComponent } from './animation-ng.component';
-import { BusyModule } from 'src/app/busy';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BusyModule } from 'src/app/busy';
+import { AnimationNgComponent } from './animation-ng.component';
 
 describe('AnimationNgComponent', () => {
   let component: AnimationNgComponent;
@@ -11,12 +11,8 @@ describe('AnimationNgComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [AnimationNgComponent],
-      imports: [
-        BusyModule,
-        BrowserAnimationsModule
-      ]
-    })
-      .compileComponents();
+      imports: [BusyModule, BrowserAnimationsModule],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

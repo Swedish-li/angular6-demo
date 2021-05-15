@@ -4,23 +4,23 @@
  */
 
 import {
-  Directive,
-  Input,
-  DoCheck,
-  ViewContainerRef,
   ComponentFactoryResolver,
   ComponentRef,
+  Directive,
+  DoCheck,
   Injector,
-  OnDestroy
+  Input,
+  OnDestroy,
+  ViewContainerRef,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { equals } from './util';
-import { PromiseTrackerService } from './promise-tracker.service';
-import { BusyService } from './busy.service';
+import { BusyBackdropComponent } from './busy-backdrop.component';
 import { IBusyConfig } from './busy-config';
 import { BusyComponent } from './busy.component';
-import { BusyBackdropComponent } from './busy-backdrop.component';
+import { BusyService } from './busy.service';
+import { PromiseTrackerService } from './promise-tracker.service';
+import { equals } from './util';
 
 /**
  * ### Syntax
@@ -32,7 +32,7 @@ import { BusyBackdropComponent } from './busy-backdrop.component';
 @Directive({
   // tslint:disable-next-line: directive-selector
   selector: '[ngBusy]',
-  providers: [PromiseTrackerService]
+  providers: [PromiseTrackerService],
 })
 export class BusyDirective implements DoCheck, OnDestroy {
   // tslint:disable-next-line: no-input-rename
@@ -50,7 +50,7 @@ export class BusyDirective implements DoCheck, OnDestroy {
     private cfResolver: ComponentFactoryResolver,
     private vcRef: ViewContainerRef,
     private injector: Injector
-  ) { }
+  ) {}
 
   private normalizeOptions(options: any) {
     if (!options) {
@@ -62,7 +62,7 @@ export class BusyDirective implements DoCheck, OnDestroy {
     ) {
       options = { busy: options };
     }
-    options = Object.assign({}, this.service.config, options);
+    options = { ...this.service.config, ...options };
     if (!Array.isArray(options.busy)) {
       options.busy = [options.busy];
     }
@@ -95,7 +95,7 @@ export class BusyDirective implements DoCheck, OnDestroy {
       this.tracker.reset({
         promiseList: options.busy,
         delay: options.delay,
-        minDuration: options.minDuration
+        minDuration: options.minDuration,
       });
 
     if (

@@ -21,7 +21,7 @@ export class PromiseTrackerService {
     this.minDuration = options.minDuration;
 
     this.promiseList = [];
-    options.promiseList.forEach(promise => {
+    options.promiseList.forEach((promise) => {
       if (!promise || promise['busyFulfilled']) {
         return;
       }
@@ -96,5 +96,5 @@ export class PromiseTrackerService {
 export interface IPromiseTrackerOptions {
   minDuration: number;
   delay: number;
-  promiseList: Promise<any>[];
+  promiseList: Array<Promise<any>>;
 }

@@ -1,32 +1,47 @@
 <div>
   <p>
     <!-- Animation callbacks -->
-    <button mat-button color="primary" *ngIf="show" (@btnState.start)="animationStart($event)" (@btnState.done)="animationDone($event)"
-      [@btnState]="btnState" (click)="btnToggle()">
+    <button
+      mat-button
+      color="primary"
+      *ngIf="show"
+      (@btnState.start)="animationStart($event)"
+      (@btnState.done)="animationDone($event)"
+      [@btnState]="btnState"
+      (click)="btnToggle()"
+    >
       btn state
     </button>
   </p>
   <p>
-    <button mat-button color="default" [@btnInlineState]="btnState" (click)="btnToggle()">
+    <button
+      mat-button
+      color="default"
+      [@btnInlineState]="btnState"
+      (click)="btnToggle()"
+    >
       btn inline state
     </button>
   </p>
   <div>
-    <button mat-button color="accent" (click)="toggle()">toggle Enter/Leave</button>
-    <hr>
+    <button mat-button color="accent" (click)="toggle()">
+      toggle Enter/Leave
+    </button>
+    <hr />
     <button mat-button color="warn" *ngIf="show" [@flyInOut]="show">
       Danger Text
     </button>
   </div>
   <div>
-    <button mat-flat-button color="primary" *ngIf="show" [@shrinkOut]="'in'">Shrink out</button>
+    <button mat-flat-button color="primary" *ngIf="show" [@shrinkOut]="'in'">
+      Shrink out
+    </button>
   </div>
 
   <div class="demo">
-    <button mat-flat-button color="primary" (click)="showBusy()" >show busy</button>
-    <div class="busy-demo" [ngBusy]="busy" >
-      angular2 busy demo
-    </div>
+    <button mat-flat-button color="primary" (click)="showBusy()">
+      show busy
+    </button>
+    <div class="busy-demo" [ngBusy]="busy">angular2 busy demo</div>
   </div>
-
 </div>

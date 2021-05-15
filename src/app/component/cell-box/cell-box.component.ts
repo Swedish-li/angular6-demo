@@ -1,17 +1,17 @@
 import {
-  Component,
-  OnInit,
-  Input,
-  ViewChild,
   AfterViewInit,
+  ChangeDetectorRef,
+  Component,
   ElementRef,
-  ChangeDetectorRef
+  Input,
+  OnInit,
+  ViewChild,
 } from '@angular/core';
 
 @Component({
   selector: 'app-cell-box',
   templateUrl: './cell-box.component.html',
-  styleUrls: ['./cell-box.component.scss']
+  styleUrls: ['./cell-box.component.scss'],
 })
 export class CellBoxComponent implements OnInit, AfterViewInit {
   @ViewChild('textBox', { static: true })

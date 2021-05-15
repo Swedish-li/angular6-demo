@@ -41,7 +41,7 @@ export const BUSY_CONFIG_DEFAULTS = {
   minDuration: 0,
   backdrop: true,
   message: 'Please wait...',
-  wrapperClass: 'ng-busy'
+  wrapperClass: 'ng-busy',
 };
 
 export class BusyConfig implements IBusyConfig {

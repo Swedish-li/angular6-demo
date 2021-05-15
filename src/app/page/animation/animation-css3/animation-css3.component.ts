@@ -6,12 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./animation-css3.component.scss'],
 })
 export class AnimationCss3Component implements OnInit {
+  constructor() {}
 
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
-
+  ngOnInit() {}
 }

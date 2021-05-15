@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 export interface LaTex {
   eq: string;
@@ -9,7 +9,7 @@ export interface LaTex {
 @Component({
   selector: 'app-la-tex',
   templateUrl: './la-tex.component.html',
-  styleUrls: ['./la-tex.component.scss']
+  styleUrls: ['./la-tex.component.scss'],
 })
 export class LaTexComponent implements OnInit {
   @Input() laTex: LaTex;

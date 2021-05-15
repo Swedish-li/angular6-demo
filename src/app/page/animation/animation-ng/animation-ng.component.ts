@@ -1,21 +1,23 @@
-import { Subscription, Subject } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
-import { btnState, btnInlineState, flyInOut, shrinkOut } from '../../../animate';
+import { Subject, Subscription } from 'rxjs';
+import {
+  btnInlineState,
+  btnState,
+  flyInOut,
+  shrinkOut,
+} from '../../../animate';
 
 @Component({
   selector: 'app-animation-ng',
   templateUrl: './animation-ng.component.html',
   styleUrls: ['./animation-ng.component.scss'],
-  animations: [btnState, btnInlineState, flyInOut, shrinkOut]
+  animations: [btnState, btnInlineState, flyInOut, shrinkOut],
 })
 export class AnimationNgComponent implements OnInit {
-
-
   /**
    * Btn state of animation AnimationNg component
    */
   btnState: string;
-
 
   /**
    * show of animation AnimationNg component
@@ -26,9 +28,7 @@ export class AnimationNgComponent implements OnInit {
 
   subject: Subject<string>;
 
-
-
-   /**
+  /**
    * Creates an instance of AnimationNg component.
    */
   constructor() {
@@ -36,13 +36,11 @@ export class AnimationNgComponent implements OnInit {
     this.show = true;
   }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   showBusy() {
     this.subject = new Subject();
-    this.busy = this.subject.subscribe( str => {
+    this.busy = this.subject.subscribe((str) => {
       console.log(str);
     });
 
@@ -50,7 +48,6 @@ export class AnimationNgComponent implements OnInit {
       this.subject.next('this is next');
       this.subject.complete();
     }, 1000);
-
   }
 
   btnToggle() {
@@ -61,7 +58,6 @@ export class AnimationNgComponent implements OnInit {
     this.show = !this.show;
   }
 
-
   /**
    * Animations start
    * @param event Animation start event
@@ -69,7 +65,6 @@ export class AnimationNgComponent implements OnInit {
   animationStart(event: AnimationEvent) {
     console.log(event);
   }
-
 
   /**
    * Animations done
